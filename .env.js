@@ -1,0 +1,8 @@
+// module.exports = {
+//     jwtSecret: "aadsbjfhgjahggoufhoausdhgoujhadsgoh0gajshg0u8w327-09487ahbsjgoh",
+//     mongoURL: "mongodb://admin:Ii12345678@ds241968.mlab.com:41968/keto",
+//     post: "3000",
+//     googleId: "684947437170-16pall7s57j3hphpmclvv47g8k7gp06v.apps.googleusercontent.com",
+//     googleSecret: "EsJVmbQZIqqmpPT2V6Q9P856",
+//     googleCallbackURL: "/auth/google/callback" // 'www.your-domain.com/api/v1/auth/google/return'
+// };

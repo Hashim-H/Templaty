@@ -1,0 +1,8 @@
+{
+    "watch": [
+        "server/**/*",
+        "app.js"
+    ],
+    "script": "app.js",
+    "ext": "js mustache"
+}
