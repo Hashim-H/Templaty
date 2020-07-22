@@ -1,0 +1,20 @@
+#header .btn {
+    margin: 33px 0 33px 15px;
+    -webkit-transition: all .4s ease;
+    -o-transition: all .4s ease;
+    transition: all .4s ease;
+}
+
+#header.sticky-header .btn { margin: 13px 0 13px 15px; }
+
+@media (max-width: 991px) {
+
+    #header .btn {
+        position: absolute;
+        margin: 0;
+        top: 33px;
+        left: auto;
+        right: 15px;
+    }
+
+}
