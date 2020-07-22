@@ -8,45 +8,45 @@ const schema = {
     type: Boolean,
     default: false
   },
-  personalInfo: [{
-    title: String,
+  personalInfo: {
+    name: String,
+    job: String,
+    email: String,
+    phone: Number
+  },
+  personalDescription: {
+    // title: String,
     value: String
-  }],
-  experiences: [{
+  },
+  experience: [{
     title: String,
-    address: String,
+    company: String,
+    // description: String,
+    startDate: Date,
+    endDate: Date
+  }],
+  education: [{
+    title: String,
+    // address: String,
     description: String,
     startDate: Date,
-    endDate: Date,
-    points: [{
-      title: String
-    }]
-  }],
-  educations: [{
-    title: String,
-    address: String,
-    description: String,
-    startDate: Date,
-    endDate: Date,
-    major: String,
-    degree: String,
-    points: [{
-      title: String
-    }]
+    endDate: Date
+    // major: String,
+    // degree: String,
+    // points: [{
+    //   title: String
+    // }]
   }],
   skills: [{
     title: String,
-    rank: {
-      type: Number,
-      default: 0
-    }
+    description: String
   }],
   languages: [{
     title: String,
-    rank: {
-      type: Number,
-      default: 0
-    }
+    // rank: {
+    //   type: Number,
+    //   default: 0
+    // }
   }],
   createdAt: {
     type: Date,

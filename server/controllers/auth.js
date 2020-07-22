@@ -116,7 +116,8 @@ exports.login_view = async (req, res, next) => {
   req.session.errors = null;
   res.render('login', {
     pageTitle: "WEEEEEEE",
-    errors: errors
+    errors: errors,
+    user: req.session.user
   });
 }
 

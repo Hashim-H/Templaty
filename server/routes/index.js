@@ -3,4 +3,5 @@ exports.set = function (app, v) {
   app.use(v, require('./auth'))
   app.use(v, require('./resume'))
   app.use(v, require('./pages'))
+  app.use(v, require('./createCv'))
 }

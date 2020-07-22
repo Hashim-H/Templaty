@@ -1,146 +1,189 @@
-<html lang="en">
-
+<!DOCTYPE html>
+<html lang="en-US">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Stylesheets
+	{{! <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="author" content="SemiColonWeb" /> }}
+
+	<!-- Stylesheets
 	============================================= -->
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700|Raleway:300,400,500,600,700|Crete+Round:400i" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="/css/bootstrap.css" type="text/css" />
-    <link rel="stylesheet" href="/css/style.css" type="text/css" />
-    <link rel="stylesheet" href="/css/dark.css" type="text/css" />
-    <link rel="stylesheet" href="/css/font-icons.css" type="text/css" />
-    <link rel="stylesheet" href="/css/animate.css" type="text/css" />
-    <link rel="stylesheet" href="/css/magnific-popup.css" type="text/css" />
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700|Raleway:300,400,500,600,700|Crete+Round:400i" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="/css/bootstrap.css" type="text/css" />
+	<link rel="stylesheet" href="/css/dark.css" type="text/css" />
+	<link rel="stylesheet" href="/css/style.css" type="text/css" />
+	<link rel="stylesheet" href="/css/font-icons.css" type="text/css" />
+	<link rel="stylesheet" href="/css/animate.css" type="text/css" />
+	<link rel="stylesheet" href="/css/magnific-popup.css" type="text/css" />
+	<link rel="stylesheet" href="/css/calendar.css" type="text/css" />
 
-    <link rel="stylesheet" href="/css/responsive.css" type="text/css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="/css/responsive.css" type="text/css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Document</title>
+	<!-- Document Title
+	============================================= -->
+	<title>Login | Templaty</title>
+
+	<style>
+
+		#header .btn {
+			margin: 33px 0 33px 15px;
+			-webkit-transition: all .4s ease;
+			-o-transition: all .4s ease;
+			transition: all .4s ease;
+		}
+		
+		#header.sticky-header .btn { margin: 13px 0 13px 15px; }
+		
+		@media (max-width: 991px) {
+		
+			#header .btn {
+				position: absolute;
+				margin: 0;
+				top: 33px;
+				left: auto;
+				right: 15px;
+			}
+		
+		}
+		
+		</style>
+
 </head>
 
-<body>
-    <!-- Content
+<body class="stretched" >
+
+	<!-- Document Wrapper
+	============================================= -->
+	<div id="wrapper" class="clearfix">
+
+		{{> header}}
+
+		
+		<!-- Content
 		============================================= -->
-    <section id="content">
+        <section id="content" style="margin-top: 30px;">
 
-        <div class="content-wrap">
-
-            <div class="container clearfix">
-
-                <div class="tabs divcenter nobottommargin clearfix" id="tab-login-register" style="max-width: 500px;">
-
-                    <ul class="tab-nav tab-nav2 center clearfix">
-                        <li class="inline-block"><a href="#tab-login">Login</a></li>
-                        <li class="inline-block"><a href="#tab-register">Register</a></li>
-                    </ul>
-
-                    <div class="tab-container">
-
-                        <div class="tab-content clearfix" id="tab-login">
-                            <div class="card nobottommargin">
-                                <div class="card-body" style="padding: 40px;">
-                                    <form id="login-form" name="login-form" action="/auth/login" method="POST" class="nobottommargin">
-
-                                        <h3>Login to your Account</h3>
-
-                                        <div class="col_full">
-                                            <label for="login-form-username">Username:</label>
-                                            <input type="email" id="login-form-username" name="email" class="form-control" />
-                                        </div>
-
-                                        <div class="col_full">
-                                            <label for="login-form-password">Password:</label>
-                                            <input type="password" id="login-form-password" name="password" class="form-control" />
-                                        </div>
-
-                                        {{#errors}}
-                                        <div class="col-md-12">
-                                            <div class="alert alert-danger">
-                                                {{ msg }}
+            <div class="content-wrap">
+    
+                <div class="container clearfix">
+    
+                    <div class="tabs divcenter nobottommargin clearfix" id="tab-login-register" style="max-width: 500px;">
+    
+                        <ul class="tab-nav tab-nav2 center clearfix">
+                            <li class="inline-block"><a href="#tab-login">Login</a></li>
+                            <li class="inline-block"><a href="#tab-register">Register</a></li>
+                        </ul>
+    
+                        <div class="tab-container">
+    
+                            <div class="tab-content clearfix" id="tab-login">
+                                <div class="card nobottommargin">
+                                    <div class="card-body" style="padding: 40px;">
+                                        <form id="login-form" name="login-form" action="/auth/login" method="POST" class="nobottommargin">
+    
+                                            <h3>Login to your Account</h3>
+    
+                                            <div class="col_full">
+                                                <label for="login-form-username">Username:</label>
+                                                <input type="email" id="login-form-username" name="email" class="form-control" />
                                             </div>
-                                        </div>
-                                        {{/errors}}
-
-                                        <div class="col_full nobottommargin">
-                                            <button class="button button-3d button-black nomargin" id="login-form-submit" name="login-form-submit" type="submit">Login</button>
-                                        </div>
-
-                                        <div class="col_full nobottommargin" style=" margin-top:10px;">
-                                            <a href="/auth/google/login" class="button button-3d button-black nomargin" type="submit">
-                                            <img width="20px" style="margin-right:8px;" alt="Google sign-in" 
-                                                src="/icons/google.svg" />
-                                                Login with Google
-                                            </a>
-                                        </div>
-
-                                    </form>
+    
+                                            <div class="col_full">
+                                                <label for="login-form-password">Password:</label>
+                                                <input type="password" id="login-form-password" name="password" class="form-control" />
+                                            </div>
+    
+                                            {{#errors}}
+                                            <div class="col-md-12">
+                                                <div class="alert alert-danger">
+                                                    {{ msg }}
+                                                </div>
+                                            </div>
+                                            {{/errors}}
+   
+                                            <div class="col_full nobottommargin">
+                                                <button class="button button-3d button-black nomargin" id="login-form-submit" name="login-form-submit" type="submit">Login</button>
+                                            </div>
+    
+                                            <div class="col_full nobottommargin" style=" margin-top:10px;">
+                                                <a href="/auth/google/login" class="button button-3d button-black nomargin" type="submit">
+                                                <img width="20px" style="margin-right:8px;" alt="Google sign-in" 
+                                                    src="/icons/google.svg" />
+                                                    Login with Google
+                                                </a>
+                                            </div>
+    
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-content clearfix" id="tab-register">
+                                <div class="card nobottommargin">
+                                    <div class="card-body" style="padding: 40px;">
+                                        <h3>Register an Account</h3>
+    
+                                        <form id="register-form" name="register-form" class="nobottommargin" action="/auth/register" method="POST">
+    
+                                            <div class="col_full">
+                                                <label for="register-form-name">Full Name:</label>
+                                                <input type="text" id="register-form-name" name="fullName" class="form-control" />
+                                            </div>
+    
+                                            <div class="col_full">
+                                                <label for="register-form-email">Email Address:</label>
+                                                <input type="email" id="register-form-email" name="email" class="form-control" />
+                                            </div>
+    
+                                            <div class="col_full">
+                                                <label for="register-form-username">Password:</label>
+                                                <input type="password" id="register-form-password" name="password" class="form-control" />
+                                            </div>
+    
+                                            <div class="col_full">
+                                                <label for="register-form-phone">Gender:</label>
+    
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="gender" id="gender" value="male">
+                                                    <label class="form-check-label" for="gender">Male</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="gender" id="gender" value="female">
+                                                    <label class="form-check-label" for="gender">Female</label>
+                                                </div>
+                                            </div>
+    
+    
+    
+                                            <div class="col_full nobottommargin">
+                                                <button class="button button-3d button-black nomargin" id="register-form-submit" type="submit">Register</button>
+                                            </div>
+    
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="tab-content clearfix" id="tab-register">
-                            <div class="card nobottommargin">
-                                <div class="card-body" style="padding: 40px;">
-                                    <h3>Register an Account</h3>
-
-                                    <form id="register-form" name="register-form" class="nobottommargin" action="/auth/register" method="POST">
-
-                                        <div class="col_full">
-                                            <label for="register-form-name">Full Name:</label>
-                                            <input type="text" id="register-form-name" name="fullName" class="form-control" />
-                                        </div>
-
-                                        <div class="col_full">
-                                            <label for="register-form-email">Email Address:</label>
-                                            <input type="email" id="register-form-email" name="email" class="form-control" />
-                                        </div>
-
-                                        <div class="col_full">
-                                            <label for="register-form-username">Password:</label>
-                                            <input type="password" id="register-form-password" name="password" class="form-control" />
-                                        </div>
-
-                                        <div class="col_full">
-                                            <label for="register-form-phone">Gender:</label>
-
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="gender" id="gender" value="male">
-                                                <label class="form-check-label" for="gender">Male</label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="gender" id="gender" value="female">
-                                                <label class="form-check-label" for="gender">Female</label>
-                                            </div>
-                                        </div>
-
-
-
-                                        <div class="col_full nobottommargin">
-                                            <button class="button button-3d button-black nomargin" id="register-form-submit" type="submit">Register</button>
-                                        </div>
-
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
+    
                     </div>
-
+    
                 </div>
-
             </div>
-        </div>
-    </section>
+		</section>
+		{{> footer}}
+	</div><!-- #wrapper end -->
 
-    <!-- External JavaScripts
+	<!-- Go To Top
 	============================================= -->
-    <script src="/js/jquery.js"></script>
-    <script src="/js/plugins.js"></script>
+	<div id="gotoTop" class="icon-angle-up"></div>
 
-    <!-- Footer Scripts
+	<!-- External JavaScripts
 	============================================= -->
-    <script src="/js/functions.js"></script>
+	<script src="/js/jquery.js"></script>
+	<script src="/js/plugins.js"></script>
+/
+	<!-- Footer Scripts
+	============================================= -->
+	<script src="/js/functions.js"></script>
 
 </body>
-
 </html>

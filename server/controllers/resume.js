@@ -3,12 +3,12 @@ const Resume = require('../models/resume')
 exports.create = async (req, res, next) => {
   try {
     const { body } = req
-    const { user } = res.locals
+    const user  = req.session.user
     const resume = await Resume.create({
       ...body,
-      owner: user.id,
+      owner: user._id,
     })
-    res.send({ resume })
+    res.redirect("/print")
   } catch (e) {
     next(e)
   }
