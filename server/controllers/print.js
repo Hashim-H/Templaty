@@ -48,7 +48,7 @@ exports.template = async (req, res, next) => {
 
     const { user } = req.session
     const resumes = await Resume.find({ owner: user._id })
-    console.log("\n\n\n\n", resumes)
+    // console.log("\n\n\n\n", resumes)
 
     res.render('template', {
     user: user,
@@ -82,7 +82,7 @@ exports.print = async (req, res, next) => {
       user: req.session.user,
     }); 
   }
-
+  
   res.render(template.view, {
     user: user,
     resume: resume

@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const moment = require("moment");
 const { Schema } = mongoose;
 
 const schema = {
@@ -12,7 +13,7 @@ const schema = {
     name: String,
     job: String,
     email: String,
-    phone: Number
+    phone: String
   },
   personalDescription: {
     // title: String,
@@ -22,20 +23,14 @@ const schema = {
     title: String,
     company: String,
     // description: String,
-    startDate: Date,
-    endDate: Date
+    startDate: {type: Date, get: prettyDate},
+    endDate: {type: Date, get: prettyDate}
   }],
   education: [{
     title: String,
-    // address: String,
     description: String,
-    startDate: Date,
-    endDate: Date
-    // major: String,
-    // degree: String,
-    // points: [{
-    //   title: String
-    // }]
+    startDate: {type: Date, get: prettyDate} ,
+    endDate: {type: Date, get: prettyDate}
   }],
   skills: [{
     title: String,
@@ -43,15 +38,15 @@ const schema = {
   }],
   languages: [{
     title: String,
-    // rank: {
-    //   type: Number,
-    //   default: 0
-    // }
   }],
   createdAt: {
     type: Date,
     default: Date.now(),
   },
 };
+
+function prettyDate(date){
+  return moment(date).format("MMM YYYY")
+}
 
 module.exports = mongoose.model("Resume", schema);

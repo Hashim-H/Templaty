@@ -14,7 +14,7 @@ router.post('/auth/login', guestMiddleware.isGuestMiddleware, authContoller.logi
 router.get('/auth/register', guestMiddleware.isGuestMiddleware, authContoller.register_view)
 router.post('/auth/register', guestMiddleware.isGuestMiddleware, authContoller.register)
 
-router.get('/auth/logout', authMiddleware.isAuthenticatedMiddleware, authContoller.logout) //TODO implement controller method
+router.get('/auth/logout', authMiddleware.isAuthenticatedMiddleware, authContoller.logout) 
 
 
 // google
