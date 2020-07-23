@@ -123,6 +123,11 @@ dl, dt, dd, ol, ul, li {
 	margin: 0;
 	padding: 0;
 }
+/* #footer{
+    position: fixed !important;
+    bottom: 0 !important;
+    width: 100% !important;
+} */
 
 .clear {
 	clear: both;
